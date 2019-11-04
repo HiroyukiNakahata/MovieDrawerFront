@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  flex-flow: wrap;
+}
+.video_wrapper {
+  width: 960px;
+  height: 540px;
+  position: relative;
+}
+.video_player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.paint_canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.video_Status {
+  color: white;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

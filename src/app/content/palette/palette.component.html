@@ -1,0 +1,57 @@
+<div class="content">
+  <div class="upload">
+    <label>
+      動画アップロード
+      <input type="file" (change)="uploadFile($event.target.files)">
+    </label>
+    <hr/>
+  </div>
+  <div class="palette">
+    <p>
+      カラーパレット
+    </p>
+    <div class="color_chip_wrapper">
+      <div class="color_chip black" (click)="setColor('#000000', 0)"></div>
+      <div class="color_chip white" (click)="setColor('#ffffff', 1)"></div>
+      <div class="color_chip gray" (click)="setColor('#9f9f9f', 2)"></div>
+      <div class="selector" [class.visible]="selectedColorChip === 0">▲</div>
+      <div class="selector" [class.visible]="selectedColorChip === 1">▲</div>
+      <div class="selector" [class.visible]="selectedColorChip === 2">▲</div>
+      <div class="color_chip red" (click)="setColor('#ff0000', 3)"></div>
+      <div class="color_chip green" (click)="setColor('#00ff00', 4)"></div>
+      <div class="color_chip blue" (click)="setColor('#0000ff', 5)"></div>
+      <div class="selector" [class.visible]="selectedColorChip === 3">▲</div>
+      <div class="selector" [class.visible]="selectedColorChip === 4">▲</div>
+      <div class="selector" [class.visible]="selectedColorChip === 5">▲</div>
+      <div class="color_chip cyan" (click)="setColor('#00ffff', 6)"></div>
+      <div class="color_chip yellow" (click)="setColor('#ffff00', 7)"></div>
+      <div class="color_chip magenta" (click)="setColor('#ff00ff', 8)"></div>
+      <div class="selector" [class.visible]="selectedColorChip === 6">▲</div>
+      <div class="selector" [class.visible]="selectedColorChip === 7">▲</div>
+      <div class="selector" [class.visible]="selectedColorChip === 8">▲</div>
+      <div class="eraser" (click)="setEraser()">消しゴム</div>
+      <div class="selector_eraser" [class.visible]="selectedColorChip === 9">▲</div>
+    </div>
+    <hr/>
+  </div>
+  <div class="border_width">
+    <div>
+      線幅
+    </div>
+    <label>
+      <input
+        class="width_slider"
+        type="range"
+        max="20"
+        min="1"
+        (input)="setWidth($event.target.value)"
+        [(ngModel)]="widthValue"
+      >
+      {{widthValue}}
+    </label>
+    <hr/>
+  </div>
+  <div class="save_button">
+    <button (click)="savePaint()">保存</button>
+  </div>
+</div>

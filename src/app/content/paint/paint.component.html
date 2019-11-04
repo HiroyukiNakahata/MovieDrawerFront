@@ -1,0 +1,63 @@
+<div class="content">
+  <div class="video_area">
+    <video
+        #video
+        [src]="moviePath"
+        width="960"
+        height="540"
+        (timeupdate)="movieTimeUpdate()"
+    ></video>
+    <div #canvasGroup>
+      <canvas
+        *ngFor="let layer of layerRange; index as i"
+        width="960"
+        height="540"
+        (mousedown)="canvasClick($event, i)"
+        (mousemove)="canvasDrag($event, i)"
+        (mouseup)="canvasDragEnd($event, i)"
+        (mouseleave)="canvasDragEnd($event, i)"
+      ></canvas>
+    </div>
+  </div>
+  <div>
+    <input
+      class="video_cti"
+      type="range"
+      min="0"
+      [max]="movieLength"
+      [(ngModel)]="movieCtiValue"
+      (input)="setMovieTime($event.target.value)"
+    >
+  </div>
+  <div>
+    <button (click)="playMovie()">再生</button>
+    <button (click)="pauseMovie()">一時停止</button>
+    <button (click)="stopMovie()">停止</button>
+  </div>
+  <div>
+    <button (click)="addLayer()">レイヤーを追加</button>
+  </div>
+  <div class="in_out_slider_wrapper">
+    <div class="in_out_slider" [class.active_slider]="getActiveSlider() === i" *ngFor="let layer of layerRange; index as i">
+      <div class="slider_header">
+        <p>Layer {{i + 1}}</p>
+        <label>
+          隠す
+          <input type="checkbox" (input)="hiddenCanvas($event.target.checked ,i)">
+        </label>
+        <label>
+          <button (click)="clearCanvas(i)">キャンバスをクリア</button>
+        </label>
+      </div>
+      <p-slider
+        [(ngModel)]="layerRange[i]"
+        [style]="{'width':'960px'}"
+        [range]="true"
+        min="0"
+        [max]="movieLength"
+        (onChange)="changeLayerRange(i)"
+      ></p-slider>
+      <hr />
+    </div>
+  </div>
+</div>

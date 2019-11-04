@@ -1,0 +1,26 @@
+.content {
+  margin-left: 15px;
+}
+.button_wrapper {
+  display: flex;
+}
+.button {
+  width: 330px;
+  height: 90px;
+  color: white;
+  font-size: 27px;
+  text-align: center;
+  line-height: 90px;
+  margin-right: 10px;
+  cursor: pointer;
+  opacity: 100%;
+}
+.button:hover {
+  opacity: 50%;
+}
+.orange {
+  background-color: orange;
+}
+.green {
+  background-color: green;
+}

@@ -1,0 +1,33 @@
+<app-navigation></app-navigation>
+<div>
+  <button (click)="firstPage()">最初</button>
+  <button (click)="previousPage()">前へ</button>
+  {{paramID}}
+  <button (click)="nextPage()">次へ</button>
+  <button (click)="lastPage()">最後</button>
+</div>
+<div #videoArea class="content">
+  <div
+    class="video_wrapper"
+    *ngFor="let history of histories; index as i"
+  >
+    <div class="video_Status">ファイル名: {{history.movie_file_name}}　アップロード日: {{getDate(history.movie_upload_time)}}</div>
+    <video
+      class="video_player"
+      width="960"
+      height="540"
+      [src]="'/api/movie/file/' + history.movie_file_name"
+      (loadedmetadata)="drawCanvas(i)"
+      (timeupdate)="movieTimeUpdate(i)"
+      (click)="editPaint(history.movie_id)"
+      autoplay
+    ></video>
+    <canvas
+      class="paint_canvas"
+      width="960"
+      height="540"
+      (click)="editPaint(history.movie_id)"
+      *ngFor="let picture of history.paints"
+    ></canvas>
+  </div>
+</div>

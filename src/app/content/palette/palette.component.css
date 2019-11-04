@@ -1,0 +1,99 @@
+.content {
+  width: 280px;
+  height: 100%;
+  background-color: #656565;
+  color: white;
+}
+.upload {
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+.upload label, input {
+  padding-left: 15px;
+}
+.palette {
+  margin-bottom: 20px;
+}
+.palette p {
+  padding-left: 15px;
+}
+.color_chip_wrapper {
+  display: flex;
+  flex-flow: wrap;
+  padding-left: 15px;
+}
+.color_chip {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  margin-right: 5px;
+  /*margin-bottom: 5px;*/
+}
+.color_chip:hover {
+  opacity: 50%;
+}
+.selector {
+  width: 75px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  visibility: hidden;
+}
+.selector_eraser {
+  width: 235px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.black {
+  background-color: black;
+}
+.white {
+  background-color: white;
+}
+.gray {
+  background-color: #9f9f9f;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: lime;
+}
+.blue {
+  background-color: blue;
+}
+.cyan {
+  background-color: #00ffff;
+}
+.yellow {
+  background-color: #ffff00;
+}
+.magenta {
+  background-color: #ff00ff;
+}
+.eraser {
+  width: 235px;
+  height: 35px;
+  cursor: pointer;
+  background-color: white;
+  color: #656565;
+  text-align: center;
+  line-height: 35px;
+}
+.border_width {
+  margin-bottom: 15px;
+}
+.border_width div, label {
+  padding-left: 15px;
+}
+.width_slider {
+  width: 200px;
+}
+.save_button {
+  padding-left: 15px;
+}
